@@ -61,13 +61,13 @@ const MOCK_POSTS: PostProps[] = [
 export default function PostFeed() {
     return (
         <div className="bg-white min-h-screen">
-            <div className="border-b border-gray-200">
+            <div className="border-none">
                 {MOCK_POSTS.map((post) => (
                     <PostCard key={post.id} post={post} />
                 ))}
             </div>
-            <div className="p-8 text-center text-gray-500 text-sm">
-                <button className="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full font-medium transition-colors shadow-sm">
+            <div className="p-8 text-center bg-white border-t border-gray-100">
+                <button className="px-7 py-3.5 bg-[#F2F4F6] hover:bg-[#E5E8EB] active:bg-gray-200 text-[#4E5968] rounded-2xl text-[14px] font-bold transition-all w-full max-w-[200px]">
                     게시물 더보기
                 </button>
             </div>

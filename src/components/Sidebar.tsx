@@ -13,10 +13,10 @@ const BOARDS = [
 
 export default function Sidebar() {
     return (
-        <aside className="w-64 flex-shrink-0 hidden md:flex flex-col border-r border-gray-200 bg-white h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
-            <div className="p-4 flex-1">
+        <aside className="w-64 flex-shrink-0 hidden md:flex flex-col border-r border-gray-100 bg-white h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
+            <div className="p-4 flex-1 mt-2">
                 <div className="mb-6">
-                    <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-3">토픽</h2>
+                    <h2 className="text-[13px] font-bold text-gray-400 mb-3 px-3">커뮤니티</h2>
                     <nav className="space-y-1">
                         {BOARDS.map((board) => {
                             const Icon = board.icon;
@@ -24,14 +24,14 @@ export default function Sidebar() {
                                 <Link
                                     key={board.id}
                                     href={`/board/${board.id}`}
-                                    className="flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                                    className="flex items-center justify-between px-3 py-2.5 text-[15px] font-medium rounded-xl text-gray-700 hover:bg-[#F2F4F6] hover:text-gray-900 transition-colors group"
                                 >
                                     <div className="flex items-center gap-3">
-                                        <Icon className="w-4 h-4 text-gray-400" />
+                                        <Icon className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" />
                                         {board.name}
                                     </div>
                                     {board.count && (
-                                        <span className="bg-gray-100 text-gray-500 py-0.5 px-2 rounded-full text-xs font-semibold">
+                                        <span className="bg-[#F2F4F6] text-gray-500 py-0.5 px-2.5 rounded-full text-xs font-semibold group-hover:bg-white group-hover:shadow-sm transition-all">
                                             {board.count}
                                         </span>
                                     )}
@@ -42,13 +42,12 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <div className="p-4 border-t border-gray-200 bg-gray-50/50">
-                <div className="bg-white rounded-lg p-4 border border-brand-100 shadow-sm relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-1 h-full bg-brand-500"></div>
-                    <p className="text-sm text-gray-900 font-bold mb-1">내 소속 인증하기</p>
-                    <p className="text-xs text-gray-500 mb-3">현재 재직 중인 센터를 인증하고 더 깊고 솔직한 대화를 나눠보세요.</p>
-                    <button className="w-full py-2 bg-brand-50 text-brand-600 border border-brand-200 rounded-md text-xs font-bold hover:bg-brand-100 transition-colors">
-                        인증 시도 🚀
+            <div className="p-5 border-t border-gray-100">
+                <div className="bg-[#E8F3FF] rounded-2xl p-5 border border-transparent hover:border-brand-100 transition-colors overflow-hidden">
+                    <h3 className="text-[15px] text-brand-600 font-bold mb-1.5 leading-snug">내 소속 인증하고<br />리얼한 토크 참여하기</h3>
+                    <p className="text-[13px] text-brand-600/80 mb-4 leading-relaxed tracking-tight">현재 재직 중인 센터를 인증하면 모든 게시판을 이용할 수 있어요.</p>
+                    <button className="w-full py-2.5 bg-brand-500 text-white rounded-xl text-[14px] font-semibold hover:bg-brand-600 transition-colors shadow-sm">
+                        소속 인증하기
                     </button>
                 </div>
             </div>
